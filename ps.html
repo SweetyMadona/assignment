@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>123</title>
+<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) { 
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) { 
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) { 
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+<style>
+body{
+background-size:100% 710px;
+border:3px rgb(51,36,108);
+color:white;
+
+}
+.container{
+padding:220px 50px 0px 480px;
+
+}
+#p1{
+color:rgb(4,247,35);
+font-size:40px;
+margin:5px;
+}
+
+</style>
+</head>
+<body background ="flwr.png" alt="confidence is perfection"/>
+
+<div class="container">
+<p id="p1">CREATE YOUR OWN ACCOUNT!!!!!</p>
+
+  <form action="ps.html">
+   <b> <label for="usrname">Username</label></b>
+    <input type="text" id="usrname" name="usrname" required><br><br>
+<b> <label for="psw">Password</label></b>
+  <input type="password" id="psw" name="psw" required>   
+<input type="submit" value="submit"><br><br>
+ 
+
+   
+<label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me <br><br><br>
+    </label>
+ <div class="container1">
+    <button type="button" class="cancelbtn">Cancel</button>&#160;&#160;
+     <a href="forgot password.html"><input type="button" value="forgot password"></a>
+  </div>
+<h3><a href="sign in.html"><p style="padding:10px 50px 10px 0px"><input type="button" value="sign in"></a></p> </h3>
+<tr><td><p style="padding:0px 20px 0px 0px"> or</p> </tr></td>
+<h3><a href="ca.html"><p style="padding:0px 10px 0px 0px"><input type="button" value="create account"> </a></p></h3>
+
+  </form>
+</div>
+
+
+</body>
+</html>

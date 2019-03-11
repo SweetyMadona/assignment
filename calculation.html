@@ -1,0 +1,179 @@
+<html>
+<head>
+<script>
+var flag=true;
+function validate()
+{
+
+var n=document.f1.nn.value;
+var pat=/^[A-Za-z]{5,12}$/;
+if(!pat.test(n))
+{
+alert("enter the name");
+flag=false;
+}
+var d=document.f1.date.value;
+var pat1=/^[0-9]{1,8}$/;
+if(!pat1.test(d))
+
+{
+alert("enter the date");
+flag=false;
+}
+var m=document.f1.mobile.value;
+var pat2=/^[0-9]{1,10}$/;
+if(!pat2.test(m))
+
+{
+alert("enter mobileno");
+flag=false;
+}
+var a=document.f1.address.value;
+var pat3=/^[A-Za-z]{10,50}$/;
+if(!pat3.test(a))
+{
+alert("enter adress");
+flag=false;
+}
+var b=document.f1.bou.value;
+
+if(b=="")
+{
+alert("select bouquettype ");
+flag=false;
+}
+var q=document.f1.quanti.value;
+
+if(q=="")
+{
+alert("enter quantity");
+flag=false;
+}
+var p=document.f1.price.value;
+
+if(price=="")
+{
+alert("fill all info");
+flag=false;
+}
+if(flag)
+{
+return true;
+}
+else
+{
+return false;
+}
+}
+function amount()
+{
+var a=document.f1.bou.value
+var b=document.f1.quanti.value;
+var c=a*b;
+document.f1.pri.value=c;
+}
+function cal()
+{
+var s=document.f1.shipping.value;
+var c=document.f1.pri.value;
+var sp=c+s;
+document.f1.ship.value=sp;
+}
+function calc()
+{
+var t= document.f1.ship.value;
+var q= t*0.05;
+document.f1.tax.value=q;
+}
+function calc1()
+{
+var w= document.f1.ship.value;
+var d= document.f1.tax.value;
+var p= (parseInt(w)+parseInt(d));
+document.f1.tot.value=p;
+}
+</script>
+<style type="text/css">
+body{
+border:2px solid blue;
+height:685px;
+width:1330px;
+background:rgb(255,174,47);
+margin:2px;
+}
+#left{
+border:2px solid pink;
+height:685px;
+width:325px;
+float:left;
+}
+#middle{
+border:2px solid blue;
+height:685px;
+width:680px;
+float:left;
+
+background-repeat:no-repeat;
+background-size:70% 500px;
+}
+#right{
+border:2px solid pink;
+height:685px;
+width:310px;
+float:left;
+}
+#p1{
+color:rgb(4,247,35);
+font-size:30px;
+margin:5px;
+font-weight:bold;
+
+}
+
+</style>
+</head>
+<body>
+<div id="left">
+<img src="flo2.jpg"height="342px"width="325px"/>
+<img src="flower1.jpg"height="342px"width="325px"/>
+</div>
+
+<div id="middle">
+<marquee><p id="p1">WELCOME!!!YOU CAN ORDER HERE!!!</p></marquee>
+<form name="f1">
+name:<input type="text" name="nn" size="10"><br><br>
+date:<input type="date" name="date"><br><br>
+mobile.no<input type="text" name="mobile" size="10"placeholder="enter mobile"><br><br>
+Address:<textarea rows="5" cols="10" name="address"></textarea><br><br>
+bouquet type:<select name="bou"><br><br>
+<option value="00">select bouquet (00)
+<option value="200">red roses(200)
+<option value="150">white roses(150)
+<option value="100">yellow roses(100)
+<option value="300">tulips(300)
+<option value="250">blossoms(250)</select><br><br>
+quantity:<select name="quanti"><br>
+<option value="1">1               
+<option value="2">2
+<option value="3">3
+<option value="4">4</select><br><br>
+price:<input type="text" name="pri" size="30" onclick="amount()"><br>
+shipping:<select name="shipping"><br><br>
+<option value>select shipping
+<option value>fast
+<option value>medium
+<option value>slow</select><br><br>
+shippingcost:<input type="text" name="ship" size="20" onclick="cal()"><br>
+tax:<input type="text" name="tax" size="10" onclick="calc()"><br>
+total:<input type="text" name="tot" size="10" onclick="calc1()"><br>
+<input type="button" value="submit" onclick="return validate()">
+
+</form>
+</div>
+<div id="right">
+<img src="flo3.jpg"height="342px"width="325px"/>
+<img src="flo5.jpg"height="342px"width="325px"/>
+</div>
+
+</body>
+</html>
